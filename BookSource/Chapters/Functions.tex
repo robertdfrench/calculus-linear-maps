@@ -68,6 +68,34 @@ you would get the following error at runtime\footnote{The phrase \emph{at runtim
 IndentationError: expected an indented block
 \end{python}
 
+\section{Python Polynomial Package}
+To facilitate our work with polynomials, the author has kindly provided\footnote{You're welcome.} a \emph{package} that contains some pre-rinsed, ready-to-eat Python algorithms for dealing with polynomial functions. To use this package, we first need to \emph{import} it, so that the definitions it contains will be available to use in our IPython session:
+
+\begin{python}
+from polynomial import *
+\end{python}
+
+Simple as that. Before we move on, let's ask what that phrase really means. The first clause, \pyth{from polynomial}, means ``I'm referring to a file called \pyth{polynomial.py}, which may be in the current directory, or somewhere else in the \emph{library path}\footnote{More on paths later; for now, just note that the library path is a set of folders that contain other python packages. These were created for you as part of the IPython install. You will not have to worry about the details of paths during the course of this book}". The second clause, \pyth{import *}, means ``grab every definition you see". So I guess in English it would be ``Grab every definition you see from the polynomial.py file".
+
+Now that we've imported this package, we can create new polynomial functions just by specifying their coefficients. Remember earlier how we said that their is a relationship between polynomials of degree 1 and points in the plane? Well, let's consider the points $P = (5,4)$ and $Q = (3,4)$:
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[scale=0.25]{BookSource/Chapters/p_and_q_hanging_out.jpg}
+	\caption{$Q$ and $P$. Just hanging out in the plane.}
+	\label{fig:p_and_q_hanging_out}
+\end{figure}
+and two corresponding polynomials, $f_P(x) = 5x + 4$ and $f_Q(x) = 3x + 4$:
+
+\begin{python}
+	fP = Polynomial([5,4])
+	fQ = Polynomial([3,4])
+\end{python}
+
+Now, so far, this connection between points and polynomials might be no more than a silly notational coincidence. However, let us consider what it means to \emph{add} two points; if there is a relationship between adding points and adding polynomials, we could be convinced that this relationship is deeper than mere coincidence.
+
+So, adding points\ldots First, let's talk about the definition of a point. When we say $Q = (3,4)$, what we mean is ``Starting from the origin\footnote{That is, the point $(0,0)$}, move 3 units along the $x$-axis, and then 4 units along the $y$-axis: here lies the point $Q$". 
+
 \section{Exercises}
 \begin{ExerciseList}
 	\Exercise{Follow the instructions given at \url{http://ipython.org/install.html} to install IPython on your workstation. If you are using a shared workstation, such as a computer in the library or university commons, ask your professor to harass the campus IT department until they IPython for you (again, using the above instructions). Should the IT department intransigently refuse to assist you, engage in an act of non-violent civil disobedience such as: staging a teach-in in front of the Help Desk, railing against their fascist behavior in pastel sidewalk chalk, or perhaps asking the custodial union to \ldots hold off a while on their next IT department trash pickup. Write an essay about your experience.}
