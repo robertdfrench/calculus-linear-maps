@@ -1,5 +1,22 @@
 \chapter{Functional Function Fun}
 \label{chap:Functions}
 
+Mathematicians are \emph{really} fond of definitions. Often, mathematicians will spend large parts of their day worrying about the precise definition of some concept, whereas a scientist or an engineer may just take it on intuition. Sometimes in this book, we'll take the route of the engineer, and just go with what makes sense. However, if we want to get started on the right foot, we'll need to make sure that we know exactly what we mean by the word ``function''.
+
 \section{What is a function?}
-It's a fun function.
+In pre-calculus, you may have discussed a function as an ``input-output machine'', meaning that it takes one number in, and puts one number out. A slightly better way to put it is to say that a function is a strict rule for associating an input number with an input number. By \emph{strict}, we mean that it is totally unambiguous; there should be no room for guessing about the interpretation of a function. For example,
+
+\[f(x) = \frac{x^2}{6}\]\\
+
+is a strict rule. For any number $x$ we can think of, it is absolutely clear how to calculate $f(x)$: we multiply $x$ by itself, then divide that number by $6$. On the other hand,
+
+\[g(x) = \frac{x^2}{\text{Number of seconds since the author's last Peanut Butter sandwich}}\]\\
+
+is quite ambiguous; do we count the seconds since the author finished his sandwich, or the number since he began? Further, suppose the author was interrupted from his sandwich by the sudden arrival of a countable gaggle of Canadian Geese, each requesting an equal-sized crumb. Clearly it would be quite impossible to interpret this expression without opening a hole for philosophers to crawl in and shout at us about the follies of swift and loose reasoning. No, better to wash our hands of it and stick to polynomials for the time being. 
+
+\section{Polynomials}
+In this book, we shall limit our discussion of functions to polynomials of real numbers, such as $x^2$, $2x^3 + 5x^2$, and even $\pi x^3 + 0.001x + 6$. We will not (at first) consider any exponential functions ($e^x$), nor any trigonometric functions($\sin(x)$, $\cos(x)$, etc\ldots), nor any other form of high-brow transcendental lavishness ($\sinh(x)$, $B_\nu(x)$, don't even get me started on wavelets\ldots). In general, polynomials look like this:
+
+\[f(x) = a_0 x^0 + a_1 x^1 + a_2 x^2 + \cdots + a_n x^n\]\\
+
+Where each of the $a_i$ are just whatever real numbers we choose. Every different choice of the $a_i$'s gives us a different polynomial. Also, the number of items in the polynomial (what we might think of as the ``length'' of the polynomial) is called the \emph{degree}
