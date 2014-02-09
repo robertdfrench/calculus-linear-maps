@@ -3,11 +3,11 @@ import copy
 class Polynomial:
 	def __init__(self, coefficients):
 		self.coefficients = coefficients
-		self.degree = len(coefficients)
+		self.degree = len(coefficients) - 1
 
 	def __call__(self, x):
 		result = 0.0
-		for exponent in range(self.degree):
+		for exponent in range(self.degree + 1):
 			   result += self.coefficients[exponent] * pow(x, exponent)
 		return result
 
