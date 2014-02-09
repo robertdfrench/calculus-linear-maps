@@ -1,6 +1,6 @@
 Understanding Calculus through Linear Maps: A Computational Approach
 ====================
-This book flips mathematical rigor the proverbial bird and instead employs simple matrix multiplication as the primary vehicle for understanding integration and differentiation of polynomials. The limit concept is introduced computationally, and by composition leads to general Taylor series by finite difference approximations, thus permitting the study of a meaningful (though meagre) class of smooth functions
+This book flips mathematical rigor the proverbial bird and opts for simple matrix multiplication as the primary vehicle for understanding the integration and differentiation of polynomials. The limit concept is introduced computationally, and by composition leads to finite difference approximations and then on to general Taylor series, permitting the study of a meagre (though meaningful) class of smooth functions.
 
 Eat your heart out, James Stewart.
 
