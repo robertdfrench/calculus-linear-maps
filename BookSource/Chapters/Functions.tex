@@ -12,10 +12,10 @@ is a strict rule. For any number $x$ we can think of, it is absolutely clear how
 
 \[g(x) = \frac{x^2}{\text{Number of seconds since the author's last Peanut Butter sandwich}}\]\\
 
-is quite ambiguous; do we count the seconds since the author finished his sandwich, or the number since he began? Further, suppose the author was interrupted from his sandwich by the sudden arrival of a countable gaggle of Canadian Geese, each requesting an equal-sized crumb. Clearly it would be quite impossible to interpret this expression without opening a hole for philosophers to crawl in and shout at us about the follies of swift and loose reasoning. No, better to wash our hands of it and stick to polynomials for the time being. 
+is quite ambiguous; do we count the seconds since the author finished his sandwich, or the number since he began? Further, suppose the author was interrupted from his sandwich by the sudden arrival of an infinite gaggle of Canadian Geese, each requesting an equal-sized crumb. Clearly it would be quite impossible to interpret this expression without opening a hole for philosophers to crawl in and shout at us about the follies of loose reasoning. No, better to wash our hands of it and stick to polynomials for the time being. 
 
 \section{Polynomials}
-In this book, we shall limit our discussion of functions to polynomials of real numbers, such as $x^2$, $2x^3 + 5x^2$, and even $\pi x^3 + 0.001x + 6$. We will not (at first) consider any exponential functions ($e^x$), nor any trigonometric functions($\sin(x)$, $\cos(x)$, etc\ldots), nor any other form of high-brow transcendental lavishness ($\sinh(x)$, $B_\nu(x)$, don't even get me started on wavelets\ldots). In general, polynomials look like this:
+In this book, we shall limit our discussion of functions to polynomials of real numbers, such as $x^2$, $2x^3 + 5x^2$, and even $\pi x^3 + 0.001x + 6$. We will not (at first) consider any exponential functions ($e^x$), nor any trigonometric functions($\sin(x)$, $\cos(x)$, etc\ldots), nor any other form of high-brow transcendental lavishness (hyperbolic functions, Bessel functions, respiratory functions\ldots). In general, polynomials look like this:
 
 \[f(x) = a_0 x^0 + a_1 x^1 + a_2 x^2 + \cdots + a_n x^n\]\\
 
@@ -33,13 +33,53 @@ In fact, it is a central idea in this book that there is a connection between po
 \section{Functions in Python}
 The tutorials in this book use the IPython \cite{PER-GRA:2007} package. Please take a moment to install IPython on your computer so that you can follow along. Install instructions are available online: \url{http://ipython.org/install.html}.
 
+Let's take a look at a simple polynomial function in Python:
+
 \begin{python}
-def foo:
-	puts "wassuuuup"
+def f(x):
+	return x + 2
+\end{python}
+
+This code does nothing more than to declare that \pyth{f} is the function $f(x) = x + 2$. In the same fashion, if we wanted to define the function $g(x) = x^2 + 3$ in Python, we could do that just as easily:
+
+\begin{python}
+def g(x):
+	return x*x + 3
+\end{python}
+
+Let's talk about what each statement does in a little more detail, so that these code examples become a bit clearer. 
+
+Do you remember earlier when we discussed how much mathematicians love definitions? Well, computers are equally obsessed with definitions, so if we want to get anything done in Python, we will need to begin by \emph{defining} what we are talking about. We can introduce a new function definition with the \pyth{def} keyword. In fact, the Python expression ``\pyth{def g(x):}" simply means ``define a new function \pyth{g} that takes a single input variable \pyth{x}".
+
+The lines below the ``\pyth{def g(x):}" statement are called the \emph{body} of the function, and they tell Python what the function is all about. In this case, we want to calculate the value $x^2 + 3$, so we tell Python to multiply $x$ by itself (\pyth{x*x}) and then add 3. The \pyth{return} keyword simply tells python "what comes after is the \emph{output} of this function". Once the \pyth{return} statement has been called, the function will end.
+
+One more note about the bodies of functions\ldots they must always be indented by 1 tab relative to the \pyth{def} statement. This is because Python assumes that the function body extends down until the first line that isn't indented. So, for example, if you were to omit the tab and write the following code:
+
+\begin{python}
+def h(x):
+return x*x + 3
+\end{python}
+you would get the following error at runtime\footnote{The phrase \emph{at runtime} is programmer speak for ``while your code is running". Using this phrase will make you sound savvy and professional, like you \emph{know what you're on about}.}:
+
+\begin{python}
+  File "<mycode.py>", line 2
+    return x*x + 2
+         ^
+IndentationError: expected an indented block
 \end{python}
 
 \section{Exercises}
 \begin{ExerciseList}
 	\Exercise{Follow the instructions given at \url{http://ipython.org/install.html} to install IPython on your workstation. If you are using a shared workstation, such as a computer in the library or university commons, ask your professor to harass the campus IT department until they IPython for you (again, using the above instructions). Should the IT department intransigently refuse to assist you, engage in an act of non-violent civil disobedience such as: staging a teach-in in front of the Help Desk, railing against their fascist behavior in pastel sidewalk chalk, or perhaps asking the custodial union to \ldots hold off a while on their next IT department trash pickup. Write an essay about your experience.}
-	\Exercise{Given two polynomials $f$ and $g$, does $f(x) + g(x)$}
+	\Exercise{How can you tell Python to import the module \pyth{polynomial.py}?}
+	
+	\Exercise{Given two polynomials $f$ and $g$, does it make sense that $f(x) + g(x)$ should always be the same as $(f + g)(x)$? That is, if we evaluate the functions first and then add their sum, will we get a different answer than if we add the polynomials first (i.e. create a new polynomial by adding their coefficients) and then evaluate the new polynomial?}
+	\Exercise{Explain why the \emph{bodies} of functions must always be indented.}
+	\Exercise{Describe in words what each line of the following Python function does:}
+\begin{python}
+def distance(x1,y1,x2,y2):
+	deltaX = (x1 - x2)
+	deltaY = (y1 - y2)
+	return pow(pow(deltaX,2) + pow(deltaY,2),0.5)
+\end{python}
 \end{ExerciseList}
