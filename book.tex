@@ -1,0 +1,23 @@
+\documentclass[psamsfonts,oneside]{amsbook}
+\usepackage{nameref}
+\usepackage{graphicx}
+\usepackage{alltt}
+\usepackage[colorlinks]{hyperref}
+
+\input{custom_environments}
+
+\makeindex
+
+\begin{document}
+\frontmatter
+\title[]{Understanding Calculus through Linear Maps: A Computational Approach}
+\author[French]{Robert D. French}
+\maketitle
+\tableofcontents
+\input{Prependices/Preface}
+\mainmatter
+\input{Chapters/Functions}
+\appendix
+\input{Appendices/Projects}
+\backmatter
+\end{document}
