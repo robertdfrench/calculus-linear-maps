@@ -32,4 +32,5 @@
 *.tdo
 *.swp
 *.swo
+*.pyc
 previews/*
