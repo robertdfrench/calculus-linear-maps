@@ -19,4 +19,13 @@ In this book, we shall limit our discussion of functions to polynomials of real 
 
 \[f(x) = a_0 x^0 + a_1 x^1 + a_2 x^2 + \cdots + a_n x^n\]\\
 
-Where each of the $a_i$ are just whatever real numbers we choose. Every different choice of the $a_i$'s gives us a different polynomial. Also, the number of items in the polynomial (what we might think of as the ``length'' of the polynomial) is called the \emph{degree}
+Where each of the $a_i$ are just whatever real numbers we choose. Every different choice of the $a_i$'s gives us a different polynomial. For example, let's pick two polynomials of degree\footnote{The \emph{degree} of a polynomial is the highest number to which $x$ is raised: $x^5 + x^4$ is a fifth-degree polynomial, $x^2 + x + 1$ is a second-degree polynomial. If we're being general, we say that $x^n + x^{n-1} + \cdots + x^1$ is an $n$-th degree polynomial} 1: 
+
+\[p_1(x) = 5 x^0 + 4 x^1\]
+\[p_2(x) = 3 x^0 + 4 x^1\]\\
+
+These are different polynomials, which should be obvious enough. Given the same input, say $x=0$, they will give different output values: $p_1(0)$ will equal 5, wheras $p_2(0)$ will equal 14\footnote{Are you working these by hand as we go along? Because $p_2(0)$ is definitely not 14\ldots}. If we plot these two functions, we will see that while they may overlap in some places, mostly they are different. 
+
+Fortunately, we do not have to check polynomials by hand or plot them to see if they are different: polynomials can be entirely characterized by their \emph{coefficients} -- that is, the specific values of $a_0$, $a_1$, etc. That means we could represent $p_1(x)$ as $(5,4)$ and $p_2(x)$ as $(3,4)$, which we can then treat as points in the plane.
+
+In fact, it is a central idea in this book that there is a connection between points in the plane and polynomials of degree 1. The same connection also holds between polynomials of degree 2 (such as $12x^2 - 100x^1 + 17x^0$) and points in a three-dimensional space, like $(12,-100,17)$. This connection allows us to use a neat tool from geometry, namely \emph{linear maps}, to study properties of polynomials having to do with rates of change. That's actually what Calculus is all about.
